@@ -355,9 +355,9 @@ mklist() {
 					echo "	Date:		$DATE"
 					echo ""
 				fi
-			elif [ "$(ls -A | grep -i \.cdi)" ]
+			elif [ "$(ls | grep -i \.cdi)" ]
 			then
-				f=`ls -A | grep -i \.cdi`
+				f=`ls | grep -i \.cdi`
 				echo "$DIR: CDI image found: $f"
 				check_cdi "$f"
 				# DiscJuggler images can have a few offsets, so this
@@ -387,9 +387,9 @@ mklist() {
 					echo "  Date:           $DATE"
 					echo ""
 				fi
-			elif [ "$(ls -A | grep -i \.bin)" ]
+			elif [ "$(ls | grep -i \.bin)" ]
 			then
-				f=`ls -A | grep -i \.bin`
+				f=`ls | grep -i \.bin`
 				echo "$DIR: BIN/CUE image found: $f"
 				#BIN/CUE images
 				#Extracting values
