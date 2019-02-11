@@ -46,8 +46,7 @@ CDI_BASE_2=339976
 
 check_os() {
 	# Check to see if we're running macOS and set flag accordingly.
-	if [ `uname` == "Darwin" ]; 
-	then
+	if [ `uname` == "Darwin" ]; then
 		IS_MACOS=1
 	fi
 }
@@ -167,9 +166,11 @@ init() {
 	# Pass SD directory as parameter 1
 	##################################################
 	
-	if [ "$SD_DIR" == "" ]
+	if [ -z "$SD_DIR" ]
 	then
-		SD_DIR="YOU_MUST_PASS_THE_SDCARD_DIRECTORY"
+		echo "You must specify your root SD directory."
+		echo "Run command again with -p full_path_to_your_sd_directory"
+		exit
 	fi
 	
 	##################################################
