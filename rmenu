@@ -22,6 +22,7 @@ VERBOSE=0
 MENU_BUILD=0
 ISO_WRITE=0
 IGNORE_BAD=0
+IS_MACOS=0
 
 ##################################################
 # Data Extraction Functions
@@ -42,6 +43,14 @@ IGNORE_BAD=0
 
 CDI_BASE_1=352816
 CDI_BASE_2=339976
+
+check_os() {
+	# Check to see if we're running macOS and set flag accordingly.
+	if [ `uname` == "Darwin" ]; 
+	then
+		IS_MACOS=1
+	fi
+}
 
 check_cdi() {
 	# Check the type of CDI file and the offset at which
