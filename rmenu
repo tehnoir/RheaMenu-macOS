@@ -167,7 +167,6 @@ init() {
 	# Simple banner
 	##################################################
 	
-	clear
 	echo "RMenu Utility for Unix/Linux"
 	echo "----------------------------"
 	echo "This tool generates the menu configuration data for the"
