@@ -328,9 +328,9 @@ mklist() {
 			echo "" 
 		elif [ "$(ls -A)" ]
 		then
-			if [ "$(ls -A | grep -i \.ccd)" ]
+			if [ "$(ls -A | grep -i \.img | grep -v ._*.img)" ]
 			then
-				f=`ls -A | grep -i \.ccd`
+				f=`ls -A | grep -i \.img | grep -v ._*.img`
 				echo "$DIR: CCD image found: $f"
 				# CloneCD images
 				#Extracting values
