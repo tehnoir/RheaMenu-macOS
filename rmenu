@@ -332,7 +332,7 @@ mklist() {
 				VERSION=`xxd -s 59 -l 5 -ps *.[iI][mM][gG] | xxd -r -p | sed -e "s/\( \)*/\1/g"`
 				DATE=`xxd -s 64 -l 8 -ps *.[iI][mM][gG] | xxd -r -p`
 				#Feeding vars
-				T=$BASENAME.title="(CCD)".$TITLE
+				T=$BASENAME.title=$TITLE
 				DI=$BASENAME.disc=$DISC
 				R=$BASENAME.region=$REGION
 				V=$BASENAME.version=$VERSION
