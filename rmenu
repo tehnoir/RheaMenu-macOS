@@ -318,20 +318,15 @@ mklist() {
 
 	# Starting the hard work
 	echo "Starting the scan"
-	for i in $(find . -maxdepth 1 -type d | sort | grep -v "\.$" | grep -v "\01")
+	for i in $(find . -not -path . -maxdepth 1 -type d | sort | grep -v "\.\/\." | grep -v "\01")
 	do
 		BAD=0
 		DIR=${i%:}                    		# Strip ':'
 		cd $DIR
 		BASENAME=`basename $(pwd)`		#Folder number
-		if [ "$(pwd | grep -E '.Trash|LOST.DIR')" ]
-		then 
-			echo "" 
-		elif [ "$(ls -A)" ]
-		then
-			if [ "$(ls -A | grep -i \.img | grep -v ._*.img)" ]
-			then
-				f=`ls -A | grep -i \.img | grep -v ._*.img`
+		if [ "$(ls)" ]; then
+			if [ "$(ls | grep -i \.img)" ]; then
+				f=`ls | grep -i \.img`
 				echo "$DIR: CCD image found: $f"
 				# CloneCD images
 				#Extracting values
