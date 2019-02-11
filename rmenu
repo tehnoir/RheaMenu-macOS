@@ -309,7 +309,7 @@ mklist() {
 
 	# Starting the hard work
 	echo "Starting the scan"
-	for i in $(find . -maxdepth 1 -type d | sort | grep -v "\.$" | grep -v "\01")
+	for i in $(find . -maxdepth 1 -type d | sort | grep -v "\.$" | grep -v "\01" | grep -v ".Spotlight-V100" | grep -v ".Trashes" | grep -v ".fseventsd")
 	do
 		BAD=0
 		DIR=${i%:}                    		# Strip ':'
