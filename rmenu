@@ -462,6 +462,7 @@ mkiso() {
 ################################
 main() {
 	init $1
+	check_os
 	mklist
 	if [ "$ISO_WRITE" == 1 ]
 	then
